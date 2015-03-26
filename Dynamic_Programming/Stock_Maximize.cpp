@@ -8,8 +8,6 @@
 #include <map>
 using namespace std;
 
-// [time] = 
-//int possible[50000];
 vector<bool> selldays;
 long long pocket;
 vector<int> shareprice;
@@ -60,29 +58,6 @@ void calculate_profit()
     }
 }
 
-/*void stockmax(long long cash, long long shares, long long time, string action)
-{
-    if (time > N) return;   
-    //cout << "t:" << time << " s:" << shares << " $:" << cash << " (" << action << ")" << endl;
-    
-    if (time == N)
-    {
-        if ((pocket == -1) || (cash > pocket))
-        {
-            pocket = cash;
-            //cout << "   t(" << time << ")= $" << cash << endl; 
-        }
-    }
-    else
-    {
-        int price = shareprice[time];
-        stockmax(cash - price, shares + 1, time + 1, "buy"); // Buy
-        stockmax(cash + price*shares, 0, time + 1, "sell"); // Sell all
-        stockmax(cash, shares, time + 1, "nothing"); // Do nothing
-    }
-}
-*/
-
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     int T, price;
@@ -102,7 +77,6 @@ int main() {
         //cout << "TESTCASE " << i + 1 << endl << "----------" << endl;
         find_sell_days();
         calculate_profit();
-        //stockmax(0, 0, 0, "start");
         cout << pocket << endl;
     }
     return 0;
